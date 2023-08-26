@@ -35,7 +35,9 @@ function LoginUser() {
                     value={values.password}
                     onChange={handleChange}
                     placeholder='Enter your password'
+                    className={errors.password ? 'input-error' : ''}
                 />
+                {errors.password && <p className='error'>{errors.password}</p>}
             </div>
             <div className='input-div'>
                 <label>Confirm Password</label>
@@ -45,7 +47,9 @@ function LoginUser() {
                     value={values.confirmPassword}
                     onChange={handleChange}
                     placeholder='Re-enter your password'
+                    className={errors.confirmPassword ? 'input-error' : ''}
                 />
+                {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
             </div>
             <div className='btn'>
                 <button>Email ile giriş</button>
