@@ -8,13 +8,13 @@ export const userSchema = yup.object().shape({
         .required('Username is required'),
     password: yup
         .string()
-        .min(5, 'Lütfen min 5 karakter giriniz')
+        .min(5, 'Please enter at least 5 characters')
         .matches(passwordRules, {
-            message: 'Lütfen en az 1 büyük harf 1 küçük harf ve 1 sayı giriniz',
+            message: 'Please enter at least 1 uppercase letter, 1 lowercase letter and 1 number',
         })
-        .required('Şifre girmek zorunludur'),
+        .required('password is required'),
     confirmPassword: yup
         .string()
-        .oneOf([yup.ref('password')], 'Şifreler eşleşmiyor')
-        .required('Tekrar şifre girmek zorunludur')
+        .oneOf([yup.ref('password')], 'Passwords do not match')
+        .required('Re-entering the password is required')
 })
