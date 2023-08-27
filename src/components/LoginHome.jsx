@@ -2,7 +2,9 @@ import React from 'react'
 
 function LoginHome() {
     return (
-        <div>LoginHome</div>
+        <div>
+            <h1>Home</h1>
+        </div>
     )
 }
 

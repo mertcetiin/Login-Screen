@@ -18,3 +18,21 @@ export const userSchema = yup.object().shape({
         .oneOf([yup.ref('password')], 'Passwords do not match')
         .required('Re-entering the password is required')
 })
+
+export const emailSchema = yup.object().shape({
+    email: yup
+        .string()
+        .email('Geçerli bir email giriniz')
+        .required('Email girmek zorunludur'),
+    password: yup
+        .string()
+        .min(5, 'Please enter at least 5 characters')
+        .matches(passwordRules, {
+            message: 'Please enter at least 1 uppercase letter, 1 lowercase letter and 1 number',
+        })
+        .required('password is required'),
+    confirmPassword: yup
+        .string()
+        .oneOf([yup.ref('password')], 'Passwords do not match')
+        .required('Re-entering the password is required'),
+})

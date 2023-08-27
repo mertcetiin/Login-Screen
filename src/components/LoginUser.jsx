@@ -26,7 +26,7 @@ function LoginUser() {
                         id='username'
                         value={values.username}
                         onChange={handleChange}
-                        placeholder='Enter your username'
+                        placeholder='Enter username'
                         className={errors.username ? 'input-error' : ''}
                     />
                     {errors.username && <p className='error'>{errors.username}</p>}
@@ -38,7 +38,7 @@ function LoginUser() {
                         id='password'
                         value={values.password}
                         onChange={handleChange}
-                        placeholder='Enter your password'
+                        placeholder='Enter password'
                         className={errors.password ? 'input-error' : ''}
                     />
                     {errors.password && <p className='error'>{errors.password}</p>}
@@ -50,7 +50,7 @@ function LoginUser() {
                         id='confirmPassword'
                         value={values.confirmPassword}
                         onChange={handleChange}
-                        placeholder='Re-enter your password'
+                        placeholder='Re-enter password'
                         className={errors.confirmPassword ? 'input-error' : ''}
                     />
                     {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
