@@ -1,0 +1,11 @@
+.home-div {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.homeLink {
+    text-decoration: none;
+    font-size: 25px;
+    padding-left: 15px;
+}
