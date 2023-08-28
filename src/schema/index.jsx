@@ -22,8 +22,8 @@ export const userSchema = yup.object().shape({
 export const emailSchema = yup.object().shape({
     email: yup
         .string()
-        .email('Geçerli bir email giriniz')
-        .required('Email girmek zorunludur'),
+        .email('Please enter a valid email')
+        .required('Email is required'),
     password: yup
         .string()
         .min(5, 'Please enter at least 5 characters')

@@ -7,13 +7,21 @@ function LoginEmail() {
 
     const navigate = useNavigate();
 
-    const { values, errors, handleChange, handleSubmit } = useFormik({
+    const onSubmit = async (values, actions) => {
+        await new Promise((resolve) => {
+            setTimeout(resolve, 1000)
+        })
+        actions.resetForm();
+        navigate('/loginhome');
+    };
+
+    const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
         initialValues: {
             email: '',
             password: '',
             confirmPassword: ''
         },
-        validationSchema: emailSchema,
+        validationSchema: emailSchema, onSubmit
     })
 
     return (
@@ -46,8 +54,8 @@ function LoginEmail() {
                     />
                     {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
                 </div>
-                <button className='email-btn' onClick={() => navigate('/')}>Username with login</button>
-                <button className='login-btn'>Login</button>
+                <button className='email-btn' disabled={isSubmitting} onClick={() => navigate('/')}>Username with login</button>
+                <button className='login-btn' disabled={isSubmitting}>Login</button>
             </form>
         </div>
     )
