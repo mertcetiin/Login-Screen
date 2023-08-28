@@ -17,7 +17,7 @@ function LoginEmail() {
     })
 
     return (
-        <div className='loginHome-div'>
+        <div className='loginUser-div'>
             <form onSubmit={handleSubmit}>
                 <div className='input-div'>
                     <label>Email address</label>
@@ -26,7 +26,7 @@ function LoginEmail() {
                         value={values.email}
                         placeholder='Enter email'
                     />
-
+                    {errors.email && <p className='error'>{errors.email}</p>}
                 </div>
                 <div className='input-div'>
                     <label>Password</label>
@@ -35,6 +35,7 @@ function LoginEmail() {
                         value={values.password}
                         placeholder='Enter password'
                     />
+                    {errors.password && <p className='error'>{errors.password}</p>}
                 </div>
                 <div className='input-div'>
                     <label>Confirm Password</label>
@@ -43,9 +44,10 @@ function LoginEmail() {
                         value={values.confirmPassword}
                         placeholder='Re-enter password'
                     />
+                    {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
                 </div>
-                <button onClick={() => navigate('/')}>Username with login</button>
-                <button>Login</button>
+                <button className='email-btn' onClick={() => navigate('/')}>Username with login</button>
+                <button className='login-btn'>Login</button>
             </form>
         </div>
     )
